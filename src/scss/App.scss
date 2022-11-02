@@ -1,0 +1,215 @@
+$num-color: rgb(42, 32, 24);
+$num-color-light: rgb(73, 67, 65);
+$op-color: rgb(210, 191, 154);
+$op-color-light: rgb(228, 209, 172);
+$case-color: rgb(239, 232, 219);
+$case-color-dark: rgb(228, 220, 202);
+$clear-color: rgb(80, 123, 140);
+$clear-color-light: rgb(114, 156, 174);
+$display-text-color: rgb(2, 114, 111);
+$display-bloom: rgb(9, 86, 85);
+$display-color: rgb(16, 16, 16);
+$display-color-glare: rgb(48, 48, 48);
+$button-text-color-light: rgb(241, 236, 225);
+$button-text-color-dark: rgb(26, 23, 24);
+$well-color: rgb(80, 80, 80);
+$well-color-light: rgb(100, 100, 100);
+
+.App {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: 99vh;
+}
+
+#calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 3.5rem);
+  grid-template-rows: 4rem 3rem 3rem 3rem 3rem 3rem;
+  background: linear-gradient(180deg, $case-color, $case-color-dark);
+  border-radius: 0.4rem;
+  justify-content: center;
+  align-content: center;
+  gap: 0.7rem;
+  width: 20rem;
+  height: 27rem;
+
+}
+
+#display {
+  grid-row: 1;
+  grid-column: 1 / -1;
+  background: linear-gradient(
+    180deg,
+    $display-color-glare 0%,
+    $display-color-glare 15%,
+    $display-color 35%
+  );
+  border-top: 0.1rem solid rgb(64, 64, 64);
+  border-bottom: 0.1rem solid black;
+  border-left: 0.1rem solid rgb(48, 48, 48);
+  border-right: 0.1rem solid rgb(48, 48, 48);
+  border-radius: 0.15rem;
+  box-shadow: inset 0.02rem 0.1rem 0.1rem -0.02rem rgba(250, 250, 250, 0.8);
+
+  h3 {
+    margin: 1.3rem 0.8rem 0.5rem;
+    text-align: right;
+    font-family: "IBM Plex Mono", sans-serif;
+    letter-spacing: 0.05rem;
+    font-weight: 500;
+    color: $display-text-color;
+    font-size: 1.2rem;
+    overflow-wrap: break-word;
+    overflow: ellipsis;
+    line-height: 1.2rem;
+    text-shadow:
+      0.04rem 0.04rem 0.15rem $display-bloom,
+      -0.04rem -0.04rem 0.2rem $display-bloom;
+  }
+}
+
+button {
+  border-radius: 0.4rem;
+  box-shadow:
+    0.1rem 0.2rem 0.1rem rgba(10, 10, 10, 0.3),
+    inset 0.05rem 0.08rem 0.1rem 0.03rem rgba(250, 250, 250, 0.4);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  border-top: none;
+  border-left: none;
+  border-width: 0.08rem;
+}
+
+button:active {
+  box-shadow: inset 0.05rem 0.08rem 0.1rem 0.03rem rgba(255, 255, 255, 0.5);
+  border-top: 0.05rem solid $well-color;
+  border-left: 0.05rem solid $well-color;
+  border-right: 0.02rem solid $well-color-light;
+  border-bottom: 0.02rem solid $well-color-light;
+}
+
+.num {
+  color: $button-text-color-light;
+  background: linear-gradient(
+    90deg,
+    $num-color-light 0%,
+    $num-color 20%,
+    $num-color 75%,
+    $num-color-light 100%
+  );
+  border-right-color: $num-color-light;
+  border-bottom-color: $num-color;
+
+}
+
+.op {
+  color: $button-text-color-dark;
+  background: linear-gradient(
+    90deg,
+    $op-color-light 0%,
+    $op-color 20%,
+    $op-color 75%,
+    $op-color-light 100%
+  );
+  border-right-color: $op-color-light;
+  border-bottom-color: $op-color;
+}
+
+.clear {
+  color: $button-text-color-light;
+  background: linear-gradient(
+    90deg,
+    $clear-color-light 0%,
+    $clear-color 20%,
+    $clear-color 75%,
+    $clear-color-light 100%
+  );
+  border-right-color: $clear-color-light;
+  border-bottom-color: $clear-color;
+  grid-row: 2;
+  grid-column: 1;
+}
+
+#divide {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+#multiply {
+  grid-row: 2;
+  grid-column: 3;
+
+}
+
+#subtract {
+  grid-row: 2;
+  grid-column: 4;
+}
+
+#seven {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+#eight {
+  grid-row: 3;
+  grid-column: 2;
+}
+
+#nine {
+  grid-row: 3;
+  grid-column: 3;
+
+}
+
+#add {
+  grid-row: 3 / 5;
+  grid-column: 4;
+}
+
+#four {
+  grid-row: 4;
+  grid-column: 1;
+}
+
+#five {
+  grid-row: 4;
+  grid-column: 2;
+}
+
+#six {
+  grid-row: 4;
+  grid-column: 3;
+}
+
+#one {
+  grid-row: 5;
+  grid-column: 1;
+}
+
+#two {
+  grid-row: 5;
+  grid-column: 2;
+}
+
+#three {
+  grid-row: 5;
+  grid-column: 3;
+}
+
+#equals {
+  grid-row: 5 / 7;
+  grid-column: 4;
+}
+
+#zero {
+  grid-row: 6;
+  grid-column: 1 / 3;
+}
+
+#decimal {
+  grid-row: 6;
+  grid-column: 3;
+}
