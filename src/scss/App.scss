@@ -14,6 +14,7 @@ $button-text-color-light: rgb(241, 236, 225);
 $button-text-color-dark: rgb(26, 23, 24);
 $well-color: rgb(80, 80, 80);
 $well-color-light: rgb(100, 100, 100);
+$well-color-lighter: rgb(105, 105, 105);
 
 .App {
   display: grid;
@@ -25,9 +26,9 @@ $well-color-light: rgb(100, 100, 100);
 #calculator {
   display: grid;
   grid-template-columns: repeat(4, 3.8rem);
-  grid-template-rows: 4rem 3.2rem 3.2rem 3.2rem 3.2rem 3.2rem;
+  grid-template-rows: 4.4rem 3.2rem 3.2rem 3.2rem 3.2rem 3.2rem;
   background: linear-gradient(180deg, $case-color, $case-color-dark);
-  border-radius: 0.4rem;
+  border-radius: 0.5rem;
   justify-content: center;
   align-content: center;
   gap: 0.7rem;
@@ -51,21 +52,23 @@ $well-color-light: rgb(100, 100, 100);
   border-right: 0.1rem solid rgb(48, 48, 48);
   border-radius: 0.15rem;
   box-shadow: inset 0.02rem 0.1rem 0.1rem -0.02rem rgba(250, 250, 250, 0.6);
+  position: relative;
 
   h3 {
     margin: 1.3rem 0.8rem 0.5rem;
     text-align: right;
     font-family: "IBM Plex Mono", sans-serif;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.06rem;
     font-weight: 500;
     color: $display-text-color;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     overflow-wrap: break-word;
-    overflow: ellipsis;
-    line-height: 1.2rem;
+    line-height: 1.4rem;
     text-shadow:
       0.04rem 0.04rem 0.15rem $display-bloom,
       -0.04rem -0.04rem 0.2rem $display-bloom;
+    position: relative;
+    top: -0.1rem;
   }
 }
 
@@ -87,7 +90,7 @@ button:active {
   border-top: 0.05rem solid $well-color;
   border-left: 0.05rem solid $well-color;
   border-right: 0.02rem solid $well-color-light;
-  border-bottom: 0.02rem solid $well-color-light;
+  border-bottom: 0.02rem solid $well-color-lighter;
 }
 
 .num {
